@@ -58,13 +58,13 @@ The program will also generate a KML file which can be imported to Google Maps a
 <KML_File>
 <Document>
 	<Placemark>
-		<decription>1c:5f:2b:8b:79:48</description>
+		<description>1c:5f:2b:8b:79:48</description>
 		<Point>
 			<coordinates>59.43196212,24.75954368</coordinates>
 		</Point>
 	</Placemark>
 	<Placemark>
-		<decription>4c:72:b9:d:8:23</description>
+		<description>4c:72:b9:d:8:23</description>
 		<Point>
 			<coordinates>59.43155534,24.76144238</coordinates>
 		</Point>
