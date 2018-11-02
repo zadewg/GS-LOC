@@ -90,13 +90,13 @@ def resread(Buffer, KML):
 			print('BSID MAC: %s' % mac)
 			channel = Wifi.channel
 
-			lat = Wifi.location.latitude
-			lng = Wifi.location.longitude
+			lat = int(Wifi.location.latitude)  * pow(10, -8)
+			lng = int(Wifi.location.longitude)  * pow(10, -8)
 			accuracy = Wifi.location.accuracy
 			altitude = Wifi.location.altitude
 
-			print('\tLatitude: %s' % str(int(lat) * pow(10, -8)))
-			print('\tLongitude: %s' % str(int(lng) * pow(10, -8)))
+			print('\tLatitude: %s' % str(lat))
+			print('\tLongitude: %s' % str(lng))
 			print('\tAccuracy Radius: %s' % accuracy)
 			print('\tAltitude: %s' % altitude)
 			
@@ -111,17 +111,19 @@ def resread(Buffer, KML):
 	
 	if KML == True:
 		with open("KML.kml", "w") as f:
-			f.write("<KML_File>\n")
+			f.write('<?xml version="1.0" encoding="UTF-8"?>\n')
+			f.write('<kml xmlns="http://www.opengis.net/kml/2.2">\n')
 			f.write("<Document>\n")
 			for array in narray:
 				f.write("\t<Placemark>\n")
 				f.write("\t\t<decription>" + str(array[0]) + "</description>\n")
 				f.write("\t\t<Point>\n")
-				f.write("\t\t\t<coordinates>" + str(array[1]) + str(array[2]) + "</coordinates>\n")
+				f.write("\t\t\t<coordinates>" + str(array[1]) + "," + str(array[2]) + "</coordinates>\n")
 				f.write("\t\t</Point>\n")
 				f.write("\t</Placemark>\n")
 			f.write("</Document>\n")
 			f.write("</kml>\n")
+
 
 
 def dbcall(macs, noise, signal, save, KML):
