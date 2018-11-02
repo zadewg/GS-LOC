@@ -107,18 +107,16 @@ def resread(Buffer, KML):
 
 			if KML == True:
 				narray.append([mac, lat, lng])
-
-	
-	if KML == True:
+	if KML == True: #Google Earth Format
 		with open("KML.kml", "w") as f:
 			f.write('<?xml version="1.0" encoding="UTF-8"?>\n')
 			f.write('<kml xmlns="http://www.opengis.net/kml/2.2">\n')
 			f.write("<Document>\n")
 			for array in narray:
 				f.write("\t<Placemark>\n")
-				f.write("\t\t<decription>" + str(array[0]) + "</description>\n")
+				f.write("\t\t<description>" + str(array[0]) + "</description>\n")
 				f.write("\t\t<Point>\n")
-				f.write("\t\t\t<coordinates>" + str(array[1]) + "," + str(array[2]) + "</coordinates>\n")
+				f.write("\t\t\t<coordinates>" + str(array[2]) + "," + str(array[1]) + "</coordinates>\n")
 				f.write("\t\t</Point>\n")
 				f.write("\t</Placemark>\n")
 			f.write("</Document>\n")
