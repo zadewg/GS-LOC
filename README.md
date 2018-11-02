@@ -112,15 +112,15 @@ The program will also generate a KML file which can be imported to Google Maps a
 <KML_File>
 <Document>
 	<Placemark>
-		<decription>b4:5d:50:8f:27:c1</description>
+		<decription>1c:5f:2b:8b:79:48</description>
 		<Point>
-			<coordinates>59431885932476144257</coordinates>
+			<coordinates>59.43196212,24.75954368</coordinates>
 		</Point>
 	</Placemark>
 	<Placemark>
-		<decription>1c:5f:2b:58:f5:ab</description>
+		<decription>4c:72:b9:d:8:23</description>
 		<Point>
-			<coordinates>59431848592476175640</coordinates>
+			<coordinates>59.43155534,24.76144238</coordinates>
 		</Point>
 	</Placemark>
 </Document>
