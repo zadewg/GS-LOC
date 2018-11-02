@@ -127,6 +127,12 @@ The program will also generate a KML file which can be imported to Google Maps a
 </kml>
 ```
 
+Google Earth KML                |        Accuracy        |
+:------------------------------:|:----------------------:|
+          ![POC](poc.jpg)       | Accuracy radius is higher in denser urban areas due to a higher loss in signal to noise ratio
+
+
+
 &nbsp;
 
 ---
