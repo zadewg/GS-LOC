@@ -105,7 +105,7 @@ BSID MAC: 1c:5f:2b:58:f5:ab
 Channel: 13
 ```
 
-The program will also generate a KML file to be imported to Googe Maps.
+The program will also generate a KML file which can be imported to Google Maps and other services.
 ```KML
 <?xml version="1.0" encoding="UTF-8"?>
 <kml xmlns="http://www.opengis.net/kml/2.2">
