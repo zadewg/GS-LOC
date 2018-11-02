@@ -83,7 +83,7 @@ $ pip install -r requi requirements.txt
 $ echo "go find Wally!"
 ```
 
-When querying the Database, it will respond with the location data from the 100 nearest access points.
+When querying the Database, it will respond with the location data from the 100 nearest access points.  
 Example: `python client.py b4:5d:50:8f:27:c1`
 **Output:**
 ```
