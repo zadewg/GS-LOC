@@ -1,4 +1,4 @@
-# GS-LOCv   COMING-SOON
+# GS-LOC
 Apple geolocation services reverse engineering. Database scraper.
 
 ```
@@ -126,6 +126,9 @@ The program will also generate a KML file to be imported to Googe Maps.
 </Document>
 </kml>
 ```
+
+&nbsp;
+
 ---
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
