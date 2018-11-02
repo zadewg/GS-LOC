@@ -1,4 +1,4 @@
-# GS-LOC
+# GS-LOCv   COMING-SOON
 Apple geolocation services reverse engineering. Database scraper.
 
 ### About wifi based geolocation
