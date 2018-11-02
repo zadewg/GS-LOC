@@ -1,0 +1,32 @@
+syntax = "proto2";
+
+
+
+message Response {
+	message ResponseWifi {
+		message WifiLocation {
+			optional int64 latitude = 1;             // X * pow(10, -8)
+			optional int64 longitude = 2;            // X * pow(10, -8)
+			optional int32 accuracy = 3;             // Radius (meters)
+			optional int32 zeroField4 = 4;           // always 0 
+			optional int32 altitude = 5;             // -500 if unknown
+			optional int32 altitudeAccuracy = 6;     // Not set if altitude=-500
+			optional int32 unknown11 = 11;           // [5,63]?
+			optional int32 unknown12 = 12;           // [30,4000]?
+		}
+		optional string mac = 1;
+		optional WifiLocation location = 2;
+		optional int32 channel = 21;
+	}
+	repeated ResponseWifi wifis = 2;
+}
+
+message Request {
+	message RequestWifi {
+		optional string mac = 1;
+	}
+	repeated RequestWifi wifis = 2;
+	optional int32 noise = 3 [default=0];
+	optional int32 signal = 4 [default=100];
+	optional string source = 5;
+}
