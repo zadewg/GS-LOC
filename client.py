@@ -107,14 +107,19 @@ def resread(Buffer, KML):
 
 			if KML == True:
 				narray.append([mac, lat, lng])
-	if KML == True: #Google Earth Format
+		else:
+			print("%s Not Found" % Wifi.mac)
+			narray.append([Wifi.mac, "Not Found", "Not Found"])
+
+	
+	if KML == True:
 		with open("KML.kml", "w") as f:
 			f.write('<?xml version="1.0" encoding="UTF-8"?>\n')
 			f.write('<kml xmlns="http://www.opengis.net/kml/2.2">\n')
 			f.write("<Document>\n")
 			for array in narray:
 				f.write("\t<Placemark>\n")
-				f.write("\t\t<description>" + str(array[0]) + "</description>\n")
+				f.write("\t\t<dsecription>" + str(array[0]) + "</description>\n")
 				f.write("\t\t<Point>\n")
 				f.write("\t\t\t<coordinates>" + str(array[2]) + "," + str(array[1]) + "</coordinates>\n")
 				f.write("\t\t</Point>\n")
@@ -122,19 +127,43 @@ def resread(Buffer, KML):
 			f.write("</Document>\n")
 			f.write("</kml>\n")
 
-
+	return "Latitude: {}, Longitude:{}".format(str(narray[0][1]), str(narray[0][1]))
 
 def dbcall(macs, noise, signal, save, KML):
 	DATA = reqpay(macs, 0, 100)
 
 	Buffer = query(URL, DATA, HEADERS)[0]
-	resread(Buffer, KML)
+	out = resread(Buffer, KML)
 
 	if save:
 		with open('buffer.bin', "wb") as f:
   			f.write(Buffer)
 
-dbcall([str(sys.argv[1])], 0 ,100, False, True)
+	return out
+
+
+
+def banner():
+
+	print("   ________  _________         .____    ________  _________    ")
+	print("  /  _____/ /   _____/         |    |   \_____  \ \_   ___ \   ")
+	print(" /   \  ___ \_____  \   ______ |    |    /   |   \/    \  \/   ")
+	print(" \    \_\  \/        \ /_____/ |    |___/    |    \     \____  ")
+	print("  \______  /_______  /         |_______ \_______  /\______  /  ")
+	print("         \/        \/                  \/       \/        \/   ")
+
+	print("\n github.com/zadewg/GS-LOC/ :: Ofensive Intelligence Gathering")
+	print("\n Apple Geolocation Services RE. Database Scraper     \n\n\n\n")
+
+	time.sleep(2)
+
+	
+if __name__ == "__main__":
+	banner()
+	out = dbcall([str(sys.argv[1])], 0 ,100, False, True)
+	print("Mac {} {}".format(sys.argv[1], out))
+
+
 
 
 """
@@ -157,23 +186,17 @@ def parsein():
 	KML = args['kml'] 
 
 
-def main():
-
-	print("   ________  _________         .____    ________  _________    ")
-	print("  /  _____/ /   _____/         |    |   \_____  \ \_   ___ \   ")
-	print(" /   \  ___ \_____  \   ______ |    |    /   |   \/    \  \/   ")
-	print(" \    \_\  \/        \ /_____/ |    |___/    |    \     \____  ")
-	print("  \______  /_______  /         |_______ \_______  /\______  /  ")
-	print("         \/        \/                  \/       \/        \/   ")
-
-	print("\n github.com/zadewg/GS-LOC/ :: Ofensive Intelligence Gathering")
-	print("\n Apple Geolocation Services RE. Database Scraper     \n\n\n\n")
-
-	time.sleep(2)
-	#parsein()
-	dbcall(MACS, 0 ,100, False, True)
-
 """
+
+
+
+
+
+
+
+
+
+
 
 
 
