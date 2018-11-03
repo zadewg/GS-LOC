@@ -22,9 +22,9 @@ The client queries a database which holds geographical coordinates related to Ac
 ### GS-LOC Install and Usage
 
 ```
-$ gt clone https://github.com/zadewg/GS-LOC/
-$ cd /GS-LOC
-$ pip install -r requi requirements.txt
+$ git clone https://github.com/zadewg/GS-LOC/
+$ cd /GS-LOC/
+$ pip install -r requirements.txt
 $ echo "go find Wally!"
 ```
 
