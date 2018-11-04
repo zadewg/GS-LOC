@@ -76,6 +76,9 @@ Google Earth KML                |        Accuracy        |
 :------------------------------:|:----------------------:|
 ![POC](poc.jpg)                 | Accuracy radius is narrower in denser urban areas due to a higher loss with distance in signal to noise ratio. |
 
+
+&nbsp;
+
 **Importing GS-LOC**
 ```python
 import GSLOC.client #Make sure the folder is named GSLOC, as python is not cool with hyphens.
