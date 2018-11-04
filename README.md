@@ -23,7 +23,8 @@ The client queries a database which holds geographical coordinates related to Ac
 
 ```
 $ git clone https://github.com/zadewg/GS-LOC/
-$ cd /GS-LOC/
+$ mc /GS-LOC/ /GSLOC/
+$ cd /GSLOC/
 $ pip install -r requirements.txt
 $ echo "go find Wally!"
 ```
@@ -77,7 +78,7 @@ Google Earth KML                |        Accuracy        |
 
 **Importing GS-LOC**
 ```python
-import GSLOC.client
+import GSLOC.client #Make sure the folder is named GSLOC, as python is not cool with hyphens.
 
 MAC = "fc:52:8d:be:eb:5f"
 DATA =  client.dbcall([MAC], 0 ,100, False, True) #DATA contains information on all nearby Access Points in a multidimensional array format. First element corresponds to the requested MAC.
