@@ -162,7 +162,7 @@ if __name__ == "__main__":
 	banner()
 	out = dbcall([str(sys.argv[1])], 0 ,100, False, True)
 
-	print("Mac {} {}".format(sys.argv[1], "Latitude: {}, Longitude:{}".format(str(out[0][1]), str(out[0][1]))))
+	print("Mac {} {}".format(sys.argv[1], "Latitude: {}, Longitude:{}".format(str(out[0][1]), str(out[0][2]))))
 
 
 
