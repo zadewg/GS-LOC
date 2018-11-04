@@ -29,8 +29,7 @@ $ echo "go find Wally!"
 ```
 
 When querying the Database, it will respond with the location data from the 100 nearest access points.  
-Example: `python client.py b4:5d:50:8f:27:c1`
-**Output:**
+> python client.py b4:5d:50:8f:27:c1`
 ```
 BSID MAC: b4:5d:50:8f:27:c1
 	Latitude: 59.43188593
@@ -75,6 +74,15 @@ The program will also generate a KML file which can be imported to Google Maps a
 Google Earth KML                |        Accuracy        |
 :------------------------------:|:----------------------:|
 ![POC](poc.jpg)                 | Accuracy radius is narrower in denser urban areas due to a higher loss with distance in signal to noise ratio. |
+
+**Importing GS-LOC**
+```python
+import GS-LOC
+
+MAC = "fc:52:8d:be:eb:5f"
+DATA =  GS-LOC.dbcall([MAC], 0 ,100, False, True) #DATA contains information on all nearby Access Points in a multidimensional array format. First element corresponds to the requested MAC.
+print("Mac {} {}".format(MAC, "Latitude: {}, Longitude:{}".format(str(DATA[0][1]), str(DATA[0][1]))))
+```
 
 ### About Apple's Geolocation Services Reverse Engineering
 
