@@ -23,7 +23,7 @@ The client queries a database which holds geographical coordinates related to Ac
 
 ```
 $ git clone https://github.com/zadewg/GS-LOC/
-$ mc /GS-LOC/ /GSLOC/
+$ mv /GS-LOC/ /GSLOC/
 $ cd /GSLOC/
 $ pip install -r requirements.txt
 $ echo "go find Wally!"
