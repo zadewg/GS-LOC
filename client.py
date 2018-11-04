@@ -127,7 +127,8 @@ def resread(Buffer, KML):
 			f.write("</Document>\n")
 			f.write("</kml>\n")
 
-	return "Latitude: {}, Longitude:{}".format(str(narray[0][1]), str(narray[0][1]))
+	return narray
+
 
 def dbcall(macs, noise, signal, save, KML):
 	DATA = reqpay(macs, 0, 100)
@@ -140,7 +141,6 @@ def dbcall(macs, noise, signal, save, KML):
   			f.write(Buffer)
 
 	return out
-
 
 
 def banner():
@@ -157,11 +157,14 @@ def banner():
 
 	time.sleep(2)
 
-	
+
 if __name__ == "__main__":
 	banner()
 	out = dbcall([str(sys.argv[1])], 0 ,100, False, True)
-	print("Mac {} {}".format(sys.argv[1], out))
+
+	print("Mac {} {}".format(sys.argv[1], "Latitude: {}, Longitude:{}".format(str(out[0][1]), str(out[0][1]))))
+
+
 
 
 
