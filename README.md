@@ -48,6 +48,8 @@ BSID MAC: 1c:5f:2b:58:f5:ab
 	Altitude: 11
 	Altitude Accuracy: 5
 Channel: 13
+
+[...]
 ```
 
 The program will also generate a KML file which can be imported to Google Maps and other services.
@@ -61,7 +63,7 @@ The program will also generate a KML file which can be imported to Google Maps a
 		<Point>
 			<coordinates>59.43196212,24.75954368</coordinates>
 		</Point>
-	</Placemark>
+	</Placemark>	
 	<Placemark>
 		<description>4c:72:b9:d:8:23</description>
 		<Point>
