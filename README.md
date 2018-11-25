@@ -87,7 +87,7 @@ import GSLOC.client #Make sure the folder is named GSLOC, as python is not cool 
 
 MAC = "fc:52:8d:be:eb:5f"
 DATA =  client.dbcall([MAC], 0 ,100, False, True) #[MAC list, Noise, Signal, Save Output, Generate KML] // DATA contains information on all nearby Access Points in a multidimensional array format. First element corresponds to the requested MAC.
-print("Mac {} {}".format(MAC, "Latitude: {}, Longitude:{}".format(str(DATA[0][1]), str(DATA[0][1]))))
+print("Mac {} {}".format(MAC, "Latitude: {}, Longitude:{}".format(str(DATA[0][1]), str(DATA[0][2]))))
 ```
 
 ### About Apple's Geolocation Services Reverse Engineering
