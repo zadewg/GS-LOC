@@ -119,7 +119,7 @@ def resread(Buffer, KML):
 			f.write("<Document>\n")
 			for array in narray:
 				f.write("\t<Placemark>\n")
-				f.write("\t\t<dsecription>" + str(array[0]) + "</description>\n")
+				f.write("\t\t<description>" + str(array[0]) + "</description>\n")
 				f.write("\t\t<Point>\n")
 				f.write("\t\t\t<coordinates>" + str(array[2]) + "," + str(array[1]) + "</coordinates>\n")
 				f.write("\t\t</Point>\n")
